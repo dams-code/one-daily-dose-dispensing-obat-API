@@ -1,0 +1,2119 @@
+basePath: /api
+definitions:
+  structs.AktivasiUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.UserObat'
+      pesan:
+        example: Aktivasi user berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.CancelTransaksiObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.TransaksiObat'
+      pesan:
+        example: Transaksi obat berhasil dibatalkan
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.DeleteDetailTransaksiObatResponse:
+    properties:
+      pesan:
+        example: Detail transaksi obat berhasil dihapus
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.DeleteKategoriObatResponse:
+    properties:
+      pesan:
+        example: Kategori obat berhasil dihapus
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.DeleteObatResponse:
+    properties:
+      pesan:
+        example: Obat berhasil dihapus
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.DeletePasienResponse:
+    properties:
+      pesan:
+        example: Pasien berhasil dihapus
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.DeleteTransaksiObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.TransaksiObat'
+      pesan:
+        example: Transaksi resep obat berhasil dihapus.
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.DeleteUserResponse:
+    properties:
+      pesan:
+        example: User berhasil dihapus
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.DetailTransaksiObat:
+    properties:
+      aturan_pakai:
+        type: string
+      created_at:
+        type: string
+      created_by:
+        type: string
+      harga:
+        type: number
+      id:
+        type: integer
+      jumlah:
+        type: number
+      kode_obat:
+        type: string
+      modified_at:
+        type: string
+      modified_by:
+        type: string
+      nama_obat:
+        type: string
+      nama_pasien:
+        type: string
+      no_detail_resep:
+        type: string
+      no_resep:
+        type: string
+      obat_id:
+        type: integer
+      satuan:
+        type: string
+      subtotal:
+        type: number
+      transaksi_obat_id:
+        type: integer
+    type: object
+  structs.DetailTransaksiObatItem:
+    properties:
+      aturan_pakai:
+        type: string
+      jumlah:
+        type: number
+      obat_id:
+        type: integer
+    type: object
+  structs.DispensingObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.TransaksiObat'
+      pesan:
+        example: Dispensing obat berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.ErrorResponse:
+    properties:
+      pesan:
+        example: Terjadi kesalahan
+        type: string
+      status:
+        example: error
+        type: string
+    type: object
+  structs.GetDetailTransaksiObatByIDResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.DetailTransaksiObat'
+      pesan:
+        example: Get detail transaksi obat by ID berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetDetailTransaksiObatResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/structs.DetailTransaksiObat'
+        type: array
+      pesan:
+        example: Get detail transaksi obat berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetKategoriObatByIDResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.KategoriObat'
+      pesan:
+        example: Get kategori obat by ID berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetKategoriObatResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/structs.KategoriObat'
+        type: array
+      pesan:
+        example: Get kategori obat berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetObatByIDResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.Obat'
+      pesan:
+        example: Get data obat by ID berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetObatResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/structs.Obat'
+        type: array
+      pesan:
+        example: Get data obat berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetPasienByIDResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.Pasien'
+      pesan:
+        example: Get pasien by ID berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetPasienResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/structs.Pasien'
+        type: array
+      pesan:
+        example: Get pasien berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetTransaksiObatByIDResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.TransaksiObat'
+      pesan:
+        example: Get transaksi obat by ID berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetTransaksiObatResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/structs.TransaksiObat'
+        type: array
+      pesan:
+        example: Get transaksi obat berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetUserByIDResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.UserObat'
+      pesan:
+        example: Get user by ID berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.GetUserResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/structs.UserObat'
+        type: array
+      pesan:
+        example: Get user berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.KategoriObat:
+    properties:
+      created_at:
+        type: string
+      created_by:
+        type: string
+      deskripsi:
+        type: string
+      id:
+        type: integer
+      modified_at:
+        type: string
+      modified_by:
+        type: string
+      nama_kategori:
+        type: string
+    type: object
+  structs.LaporanTransaksiObat:
+    properties:
+      created_at:
+        type: string
+      created_by:
+        type: string
+      id:
+        type: integer
+      kembalian:
+        type: number
+      nama_pasien:
+        type: string
+      no_resep:
+        type: string
+      status:
+        type: string
+      tipe_pembayaran:
+        type: string
+      total_harga:
+        type: number
+      total_item:
+        type: integer
+      total_pembayaran:
+        type: number
+    type: object
+  structs.LoginRequest:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  structs.LoginResponse:
+    properties:
+      pesan:
+        example: 'Hi, dodo Role: ADMINFARMASI'
+        type: string
+      status:
+        example: sukses
+        type: string
+      token:
+        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        type: string
+    type: object
+  structs.Obat:
+    properties:
+      created_at:
+        type: string
+      created_by:
+        type: string
+      harga:
+        type: number
+      id:
+        type: integer
+      kategori_id:
+        type: integer
+      kode_obat:
+        type: string
+      modified_at:
+        type: string
+      modified_by:
+        type: string
+      nama_kategori:
+        type: string
+      nama_obat:
+        type: string
+      satuan:
+        type: string
+      stok:
+        type: number
+    type: object
+  structs.Pasien:
+    properties:
+      alamat:
+        type: string
+      created_at:
+        type: string
+      created_by:
+        type: string
+      id:
+        type: integer
+      jenis_kelamin:
+        type: string
+      modified_at:
+        type: string
+      modified_by:
+        type: string
+      nama:
+        type: string
+      rm:
+        type: string
+    type: object
+  structs.RegisterUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.UserObat'
+      pesan:
+        example: registrasi user berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.TambahDetailTransaksiObatRequest:
+    properties:
+      itemObat:
+        items:
+          $ref: '#/definitions/structs.DetailTransaksiObatItem'
+        minItems: 1
+        type: array
+    required:
+    - itemObat
+    type: object
+  structs.TambahDetailTransaksiObatResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/structs.DetailTransaksiObat'
+        type: array
+      pesan:
+        example: Detail transaksi obat berhasil ditambahkan
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.TambahKategoriObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.KategoriObat'
+      pesan:
+        example: Kategori obat berhasil ditambahkan
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.TambahObatRequest:
+    properties:
+      harga:
+        type: number
+      kategori_id:
+        type: integer
+      nama_obat:
+        type: string
+      satuan:
+        type: string
+      stok:
+        type: number
+    required:
+    - kategori_id
+    - nama_obat
+    - satuan
+    type: object
+  structs.TambahObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.Obat'
+      pesan:
+        example: Tambah data obat berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.TambahPasienRequest:
+    properties:
+      alamat:
+        type: string
+      jenis_kelamin:
+        type: string
+      nama:
+        type: string
+      rm:
+        type: string
+    required:
+    - jenis_kelamin
+    - nama
+    - rm
+    type: object
+  structs.TambahPasienResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.Pasien'
+      pesan:
+        example: Tambah pasien berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.TambahTransaksiObatRequest:
+    properties:
+      pasien_id:
+        type: integer
+    required:
+    - pasien_id
+    type: object
+  structs.TambahTransaksiObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.TransaksiObat'
+      pesan:
+        example: Transaksi obat berhasil ditambahkan
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.TambahUserRequest:
+    properties:
+      nama:
+        type: string
+      password:
+        minLength: 6
+        type: string
+      role:
+        enum:
+        - KEPALAFARMASI
+        - ADMINFARMASI
+        - APOTEKER
+        type: string
+      username:
+        type: string
+    required:
+    - nama
+    - password
+    - role
+    - username
+    type: object
+  structs.TambahUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.UserObat'
+      pesan:
+        example: User berhasil ditambahkan
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.TambahdanUpdateKategoriObatRequest:
+    properties:
+      deskripsi:
+        type: string
+      nama_kategori:
+        type: string
+    required:
+    - nama_kategori
+    type: object
+  structs.TransaksiObat:
+    properties:
+      created_at:
+        type: string
+      created_by:
+        type: string
+      dibayar_at:
+        type: string
+      grand_total:
+        type: number
+      id:
+        type: integer
+      kembalian:
+        type: number
+      modified_at:
+        type: string
+      modified_by:
+        type: string
+      nama_pasien:
+        type: string
+      no_resep:
+        type: string
+      pasien_id:
+        type: integer
+      status:
+        type: string
+      tipe_pembayaran:
+        type: string
+      total_pembayaran:
+        type: number
+    type: object
+  structs.UpdateDetailTransaksiObatRequest:
+    properties:
+      aturan_pakai:
+        type: string
+      jumlah:
+        type: number
+    type: object
+  structs.UpdateDetailTransaksiObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.DetailTransaksiObat'
+      pesan:
+        example: Detail transaksi obat berhasil diperbarui
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.UpdateKategoriObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.KategoriObat'
+      pesan:
+        example: Kategori obat berhasil diperbarui
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.UpdateObatRequest:
+    properties:
+      harga:
+        type: number
+      kategori_id:
+        type: integer
+      nama_obat:
+        type: string
+      satuan:
+        type: string
+      stok:
+        type: number
+    type: object
+  structs.UpdateObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.Obat'
+      pesan:
+        example: Update data obat berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.UpdatePasienRequest:
+    properties:
+      alamat:
+        type: string
+      jenis_kelamin:
+        type: string
+      nama:
+        type: string
+      rm:
+        type: string
+    type: object
+  structs.UpdatePasienResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.Pasien'
+      pesan:
+        example: Update pasien berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.UpdateTransaksiObatRequest:
+    properties:
+      status:
+        enum:
+        - PENDING
+        - CANCELED
+        type: string
+    type: object
+  structs.UpdateTransaksiObatResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.TransaksiObat'
+      pesan:
+        example: Update data transaksi resep obat pasien berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.UpdateUserRequest:
+    properties:
+      nama:
+        type: string
+      password:
+        type: string
+      role:
+        enum:
+        - KEPALAFARMASI
+        - ADMINFARMASI
+        - APOTEKER
+        type: string
+    type: object
+  structs.UpdateUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/structs.UserObat'
+      pesan:
+        example: Update user berhasil
+        type: string
+      status:
+        example: sukses
+        type: string
+    type: object
+  structs.UserObat:
+    properties:
+      created_at:
+        type: string
+      created_by:
+        type: string
+      id:
+        type: integer
+      modified_at:
+        type: string
+      modified_by:
+        type: string
+      nama:
+        type: string
+      role:
+        type: string
+      status:
+        type: boolean
+      username:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: '-'
+    name: Damar
+  description: 'Dokumentasi REST API Alur Obat Farmasi menggunakan Golang (Framework
+    : Gin dan Database : PostgreSQL).'
+  license:
+    name: MIT
+  termsOfService: http://swagger.io/terms/
+  title: Final Project API
+  version: "1.0"
+paths:
+  /api/admin-farmasi/kategori-obat:
+    get:
+      description: Mengambil Semua data kategori obat
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Berhasil mengambil data kategori obat
+          schema:
+            $ref: '#/definitions/structs.GetKategoriObatResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Semua Kategori Obat
+      tags:
+      - 3. Kategori Obat
+    post:
+      consumes:
+      - application/json
+      description: Menambahkan kategori obat baru
+      parameters:
+      - description: Data Kategori Obat
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.TambahdanUpdateKategoriObatRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Kategori obat berhasil ditambahkan
+          schema:
+            $ref: '#/definitions/structs.TambahKategoriObatResponse'
+        "400":
+          description: Gagal tambah kategori obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "409":
+          description: Kategori obat sudah ada
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Tambah Kategori Obat
+      tags:
+      - 3. Kategori Obat
+  /api/admin-farmasi/kategori-obat/{id}:
+    delete:
+      description: Menghapus kategori obat
+      parameters:
+      - description: ID Kategori Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Kategori obat berhasil dihapus
+          schema:
+            $ref: '#/definitions/structs.DeleteKategoriObatResponse'
+        "400":
+          description: ID Kategori obat tidak valid
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Kategori obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Delete Kategori Obat
+      tags:
+      - 3. Kategori Obat
+    get:
+      description: Mengambil detail kategori obat berdasarkan ID
+      parameters:
+      - description: ID Kategori Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Berhasil mengambil detail kategori obat
+          schema:
+            $ref: '#/definitions/structs.GetKategoriObatByIDResponse'
+        "400":
+          description: ID Kategori Obat tidak valid
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Kategori obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Kategori Obat By ID
+      tags:
+      - 3. Kategori Obat
+    put:
+      consumes:
+      - application/json
+      description: Mengubah data kategori obat
+      parameters:
+      - description: ID Kategori Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Data Kategori Obat
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.TambahdanUpdateKategoriObatRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Kategori obat berhasil diUpdate
+          schema:
+            $ref: '#/definitions/structs.UpdateKategoriObatResponse'
+        "400":
+          description: Gagal Update kategori obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Kategori obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Update Kategori Obat
+      tags:
+      - 3. Kategori Obat
+  /api/admin-farmasi/kategori-obat/{id}/obat:
+    get:
+      description: Mengambil daftar obat berdasarkan ID kategori obat
+      parameters:
+      - description: ID Kategori Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Berhasil mengambil data obat by kategori
+          schema:
+            $ref: '#/definitions/structs.GetObatResponse'
+        "400":
+          description: Gagal get obat by kategori
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Kategori obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Obat Berdasarkan Kategori
+      tags:
+      - 4. Obat
+  /api/admin-farmasi/obat:
+    get:
+      description: Mengambil seluruh data obat
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Berhasil get data obat
+          schema:
+            $ref: '#/definitions/structs.GetObatResponse'
+        "401":
+          description: Gagal get data obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Semua Obat
+      tags:
+      - 4. Obat
+    post:
+      consumes:
+      - application/json
+      description: Menambahkan data obat baru
+      parameters:
+      - description: Data Obat
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.TambahObatRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Tambah data obat berhasil
+          schema:
+            $ref: '#/definitions/structs.TambahObatResponse'
+        "400":
+          description: Gagal tambah obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "409":
+          description: Kode obat sudah digunakan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Tambah Obat
+      tags:
+      - 4. Obat
+  /api/admin-farmasi/obat/{id}:
+    delete:
+      description: Menghapus data obat
+      parameters:
+      - description: ID Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Obat berhasil dihapus
+          schema:
+            $ref: '#/definitions/structs.DeleteObatResponse'
+        "400":
+          description: Gagal hapus obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Delete Obat
+      tags:
+      - 4. Obat
+    get:
+      description: Mengambil detail obat berdasarkan ID
+      parameters:
+      - description: ID Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get data obat by ID berhasil
+          schema:
+            $ref: '#/definitions/structs.GetObatByIDResponse'
+        "400":
+          description: ID Obat tidak valid
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Obat By ID
+      tags:
+      - 4. Obat
+    put:
+      consumes:
+      - application/json
+      description: Mengubah data obat
+      parameters:
+      - description: ID Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Data Obat
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.UpdateObatRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Update data obat berhasil
+          schema:
+            $ref: '#/definitions/structs.UpdateObatResponse'
+        "400":
+          description: Gagal update obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Update Obat
+      tags:
+      - 4. Obat
+  /api/admin-farmasi/pasien:
+    get:
+      description: Mengambil Semua data pasien
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Berhasil Get data pasien
+          schema:
+            $ref: '#/definitions/structs.GetPasienResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Semua Pasien
+      tags:
+      - 5. Pasien
+    post:
+      consumes:
+      - application/json
+      description: Menambahkan data pasien baru
+      parameters:
+      - description: Data Pasien
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.TambahPasienRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Pasien berhasil ditambahkan
+          schema:
+            $ref: '#/definitions/structs.TambahPasienResponse'
+        "400":
+          description: Gagal tambah pasien
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "409":
+          description: No RM Pasien sudah digunakan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Tambah Pasien
+      tags:
+      - 5. Pasien
+  /api/admin-farmasi/pasien/{id}:
+    delete:
+      description: Menghapus data pasien
+      parameters:
+      - description: ID Pasien
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Pasien berhasil dihapus
+          schema:
+            $ref: '#/definitions/structs.DeletePasienResponse'
+        "400":
+          description: ID tidak valid
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Pasien tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Delete Pasien
+      tags:
+      - 5. Pasien
+    get:
+      description: Mengambil detail pasien berdasarkan ID
+      parameters:
+      - description: ID Pasien
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Berhasil mengambil detail pasien
+          schema:
+            $ref: '#/definitions/structs.GetPasienByIDResponse'
+        "400":
+          description: ID Pasien tidak valid
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Pasien tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Pasien By ID
+      tags:
+      - 5. Pasien
+    put:
+      consumes:
+      - application/json
+      description: Mengubah data pasien
+      parameters:
+      - description: ID Pasien
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Data Pasien
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.UpdatePasienRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Update Pasien berhasil
+          schema:
+            $ref: '#/definitions/structs.UpdatePasienResponse'
+        "400":
+          description: Gagal update pasien
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Pasien tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Update Pasien
+      tags:
+      - 5. Pasien
+  /api/admin-farmasi/transaksi-obat:
+    get:
+      description: Menampilkan daftar transaksi obat
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Berhasil Get daftar transaksi resep obat
+          schema:
+            $ref: '#/definitions/structs.GetTransaksiObatResponse'
+        "400":
+          description: Gagal Get data transaksi resep obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Transaksi resep obat tidak ada
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Semua Transaksi Obat
+      tags:
+      - 6. Transaksi Obat
+    post:
+      consumes:
+      - application/json
+      description: Membuat transaksi obat baru
+      parameters:
+      - description: Data Transaksi Obat
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.TambahTransaksiObatRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Tambah data transaksi resep obat pasien berhasil
+          schema:
+            $ref: '#/definitions/structs.TambahTransaksiObatResponse'
+        "400":
+          description: Gagal tambah data transaksi resep obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Transaksi resep obat sudah dibuat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Tambah Transaksi Obat
+      tags:
+      - 6. Transaksi Obat
+  /api/admin-farmasi/transaksi-obat/{id}:
+    delete:
+      description: Menghapus transaksi obat
+      parameters:
+      - description: ID Transaksi Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Transaksi resep obat berhasil dihapus
+          schema:
+            $ref: '#/definitions/structs.DeleteTransaksiObatResponse'
+        "400":
+          description: Gagal hapus transaksi resep obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: ID Transaksi resep obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Delete Transaksi Obat
+      tags:
+      - 6. Transaksi Obat
+    get:
+      description: Menampilkan detail transaksi obat
+      parameters:
+      - description: ID Transaksi
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get transaksi resep obat by ID berhasil
+          schema:
+            $ref: '#/definitions/structs.GetTransaksiObatByIDResponse'
+        "400":
+          description: Gagal Get data transaksi resep obat by ID
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: ID  Transaksi resep obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Transaksi Obat By ID
+      tags:
+      - 6. Transaksi Obat
+    put:
+      consumes:
+      - application/json
+      description: Mengubah data transaksi obat
+      parameters:
+      - description: ID Transaksi Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Data Transaksi resep obat
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.UpdateTransaksiObatRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Update data transaksi resep obat pasien berhasil
+          schema:
+            $ref: '#/definitions/structs.UpdateTransaksiObatResponse'
+        "400":
+          description: Gagal update transaksi resep obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: ID Transaksi resep obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Update Transaksi Obat
+      tags:
+      - 6. Transaksi Obat
+  /api/admin-farmasi/transaksi-obat/{id}/cancel:
+    patch:
+      description: Membatalkan transaksi obat dengan mengembalikan stok obat jika
+        status transaksi masih PENDING
+      parameters:
+      - description: ID Transaksi Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Cancel data transaksi resep obat pasien berhasil
+          schema:
+            $ref: '#/definitions/structs.CancelTransaksiObatResponse'
+        "400":
+          description: Gagal hapus transaksi resep obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: ID Transaksi resep obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Cancel Transaksi Obat
+      tags:
+      - 6. Transaksi Obat
+  /api/admin-farmasi/transaksi-obat/{id}/detail:
+    get:
+      description: Mengambil seluruh detail obat berdasarkan transaksi resep obat
+      parameters:
+      - description: ID Transaksi Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get Id resep obat (header transaksi obat) beserta isi item
+            obat-nya berhasil
+          schema:
+            $ref: '#/definitions/structs.GetDetailTransaksiObatResponse'
+        "400":
+          description: ID transaksi obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Transaksi obat dan detailnya tidak ada
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Detail Transaksi Berdasarkan ID Transaksi resep obat (header)
+      tags:
+      - 7. Detail Transaksi Obat
+    post:
+      consumes:
+      - application/json
+      description: Menambahkan satu atau lebih obat ke transaksi dan otomatis mengurangi
+        stok obat
+      parameters:
+      - description: ID Transaksi Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Daftar Obat
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.TambahDetailTransaksiObatRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Tambah item obat kedalam detail transaksi resep obat pasien
+            berhasil
+          schema:
+            $ref: '#/definitions/structs.TambahDetailTransaksiObatResponse'
+        "400":
+          description: Gagal Get data detail transaksi resep obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Detail transaksi resep obat tidak ada
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Tambah Detail Transaksi Obat
+      tags:
+      - 7. Detail Transaksi Obat
+  /api/admin-farmasi/transaksi-obat/detail:
+    get:
+      description: Mengambil seluruh data detail transaksi resep obat
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get detail transaksi resep obat pasien (berisikan list item
+            obat) berhasil
+          schema:
+            $ref: '#/definitions/structs.GetDetailTransaksiObatResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Semua Detail Transaksi Resep Obat
+      tags:
+      - 7. Detail Transaksi Obat
+  /api/admin-farmasi/transaksi-obat/detail/{id}:
+    delete:
+      description: Menghapus detail transaksi obat dan mengembalikan stok obat secara
+        otomatis.
+      parameters:
+      - description: ID Detail Transaksi
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/structs.DeleteDetailTransaksiObatResponse'
+        "400":
+          description: Gagal Get data detail transaksi resep obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Detail transaksi resep obat tidak ada
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Delete Detail Transaksi Obat
+      tags:
+      - 7. Detail Transaksi Obat
+    get:
+      description: Mengambil detail transaksi obat berdasarkan ID Detail
+      parameters:
+      - description: ID Detail Transaksi
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get daftar item obat by ID pada detail transaksi resep obat
+            pasien berhasil
+          schema:
+            $ref: '#/definitions/structs.GetDetailTransaksiObatByIDResponse'
+        "400":
+          description: Gagal get daftar item obat pada detail transaksi obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Detail Transaksi resep obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Detail Transaksi Obat By ID
+      tags:
+      - 7. Detail Transaksi Obat
+    put:
+      consumes:
+      - application/json
+      description: Mengubah jumlah obat atau aturan pakai. Stok obat akan disesuaikan
+        secara otomatis.
+      parameters:
+      - description: ID Detail Transaksi
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Data Detail
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.UpdateDetailTransaksiObatRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Update informasi item obat pada detail transaksi kedalam transaksi
+            resep obat pasien berhasil
+          schema:
+            $ref: '#/definitions/structs.UpdateDetailTransaksiObatResponse'
+        "400":
+          description: ID transaksi obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Transaksi obat dan detailnya tidak ada
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Update Detail Transaksi Obat
+      tags:
+      - 7. Detail Transaksi Obat
+  /api/apoteker/transaksi-obat/{id}/detail:
+    get:
+      description: Mengambil seluruh detail obat berdasarkan transaksi resep obat
+      parameters:
+      - description: ID Transaksi Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get Id resep obat (header transaksi obat) beserta isi item
+            obat-nya berhasil
+          schema:
+            $ref: '#/definitions/structs.GetDetailTransaksiObatResponse'
+        "400":
+          description: ID transaksi obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Transaksi obat dan detailnya tidak ada
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Detail Transaksi Berdasarkan ID Transaksi resep obat (header)
+      tags:
+      - 7. Detail Transaksi Obat
+  /api/apoteker/transaksi-obat/{id}/dispensing:
+    put:
+      description: Mengubah status transaksi obat dari PENDING menjadi DISPENSED.
+        Transaksi harus memiliki minimal satu detail obat.
+      parameters:
+      - description: ID Transaksi Obat
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Proses dispensing transaksi resep obat (pemberian obat) berhasil
+          schema:
+            $ref: '#/definitions/structs.DispensingObatResponse'
+        "400":
+          description: ID Transaksi obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Gagal dispense transaksi resep obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Dispensing Obat
+      tags:
+      - 8. Dispensed
+  /api/apoteker/transaksi-obat/detail/{id}:
+    get:
+      description: Mengambil detail transaksi obat berdasarkan ID Detail
+      parameters:
+      - description: ID Detail Transaksi
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get daftar item obat by ID pada detail transaksi resep obat
+            pasien berhasil
+          schema:
+            $ref: '#/definitions/structs.GetDetailTransaksiObatByIDResponse'
+        "400":
+          description: Gagal get daftar item obat pada detail transaksi obat
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Detail Transaksi resep obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Detail Transaksi Obat By ID
+      tags:
+      - 7. Detail Transaksi Obat
+  /api/apoteker/transaksi-obat/pending:
+    get:
+      description: Menampilkan daftar transaksi obat dengan status PENDING yang belum
+        didispensing.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get daftar pending transaksi resep obat berhasil
+          schema:
+            $ref: '#/definitions/structs.GetTransaksiObatResponse'
+        "401":
+          description: Data pending transaksi resep obat tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Transaksi Obat Pending
+      tags:
+      - 8. Dispensed
+  /api/kepala-farmasi/laporan/transaksi-obat:
+    get:
+      description: Menampilkan laporan transaksi obat berdasarkan rentang tanggal.
+      parameters:
+      - description: Tanggal awal (YYYY-MM-DD)
+        example: "2026-07-01"
+        in: query
+        name: tanggal_awal
+        required: true
+        type: string
+      - description: Tanggal akhir (YYYY-MM-DD)
+        example: "2026-07-31"
+        in: query
+        name: tanggal_akhir
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get daftar laporan transaksi resep obat pasien berhasil
+          schema:
+            $ref: '#/definitions/structs.LaporanTransaksiObat'
+        "400":
+          description: Transaksi obat tidak ditemukan pada rentang tanggal awal -
+            akhir.
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Transaksi obat tidak ada.
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Laporan Transaksi Resep Obat
+      tags:
+      - 10. Laporan
+  /auth/login:
+    post:
+      consumes:
+      - application/json
+      description: Login menggunakan username dan password untuk mendapatkan JWT Token
+      parameters:
+      - description: Data Login
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Login berhasil
+          schema:
+            $ref: '#/definitions/structs.LoginResponse'
+        "400":
+          description: Request login tidak valid
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "401":
+          description: Username atau password salah
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      summary: Login User
+      tags:
+      - 1. Authentication
+  /auth/register:
+    post:
+      consumes:
+      - application/json
+      description: Menambahkan user baru
+      parameters:
+      - description: Registrasi Data User
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.TambahUserRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Registrasi user berhasil
+          schema:
+            $ref: '#/definitions/structs.RegisterUserResponse'
+        "400":
+          description: Request Register tidak valid
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      summary: Register User
+      tags:
+      - 1. Authentication
+  /kepala-farmasi/users:
+    get:
+      description: Mengambil seluruh data user
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get User
+          schema:
+            $ref: '#/definitions/structs.GetUserResponse'
+        "401":
+          description: Gagal get User
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get Semua User
+      tags:
+      - 2. User
+    post:
+      consumes:
+      - application/json
+      description: Menambahkan user baru
+      parameters:
+      - description: Data User
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.TambahUserRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Tambah user berhasil
+          schema:
+            $ref: '#/definitions/structs.TambahUserResponse'
+        "400":
+          description: Gagal tambah user
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Tambah User
+      tags:
+      - 2. User
+  /kepala-farmasi/users/{id}:
+    delete:
+      description: Menghapus user
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: delete user
+          schema:
+            $ref: '#/definitions/structs.DeleteUserResponse'
+        "400":
+          description: ID User tidak valid
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: User tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Delete User
+      tags:
+      - 2. User
+    get:
+      description: Mengambil detail user berdasarkan ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Get User by ID
+          schema:
+            $ref: '#/definitions/structs.GetUserByIDResponse'
+        "400":
+          description: ID User tidak valid
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: Gagal get User by ID
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get User By ID
+      tags:
+      - 2. User
+    put:
+      consumes:
+      - application/json
+      description: Mengubah data user
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Data User
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.UpdateUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Update User
+          schema:
+            $ref: '#/definitions/structs.UpdateUserResponse'
+        "400":
+          description: Gagal update User
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: User tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Update User
+      tags:
+      - 2. User
+  /kepala-farmasi/users/{id}/aktivasi:
+    patch:
+      consumes:
+      - application/json
+      description: Mengaktifkan atau menonaktifkan user
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Status User
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/structs.AktivasiUserResponse'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: aktivasi user
+          schema:
+            $ref: '#/definitions/structs.AktivasiUserResponse'
+        "400":
+          description: gagal aktivasi user
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "404":
+          description: ID user tidak ditemukan
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+        "500":
+          description: Internal server error
+          schema:
+            $ref: '#/definitions/structs.ErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Aktivasi User
+      tags:
+      - 2. User
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
+tags:
+- description: Endpoint autentikasi
+  name: 1. Authentication
+- description: Manajemen user
+  name: 2. User
+- description: Manajemen kategori obat
+  name: 3. Kategori Obat
+- description: Manajemen obat
+  name: 4. Obat
+- description: Manajemen pasien
+  name: 5. Pasien
+- description: Manajemen transaksi obat
+  name: 6. Transaksi Obat
+- description: Manajemen detail transaksi obat
+  name: 7. Detail Transaksi Obat
+- description: Dispensed (obat diberikan ke pasien / pembeli di apotik )
+  name: 8. Dispensed
+- description: Laporan farmasi
+  name: 9. Laporan
