@@ -1827,7 +1827,7 @@ paths:
       - BearerAuth: []
       summary: Get Laporan Transaksi Resep Obat
       tags:
-      - 10. Laporan
+      - 9. Laporan
   /auth/login:
     post:
       consumes:

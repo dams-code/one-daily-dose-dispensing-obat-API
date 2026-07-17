@@ -11,7 +11,7 @@ import (
 //
 // @Summary      Get Laporan Transaksi Resep Obat
 // @Description  Menampilkan laporan transaksi obat berdasarkan rentang tanggal.
-// @Tags         10. Laporan
+// @Tags         9. Laporan
 // @Produce      json
 // @Security     BearerAuth
 // @Param        tanggal_awal query string true "Tanggal awal (YYYY-MM-DD)" example(2026-07-01)

@@ -1658,7 +1658,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "10. Laporan"
+                    "9. Laporan"
                 ],
                 "summary": "Get Laporan Transaksi Resep Obat",
                 "parameters": [
