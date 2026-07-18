@@ -2,12 +2,13 @@ package middleware
 
 import (
 	"errors"
+	"os"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
 )
 
-var setKodeJWT = []byte("damarfinalproject123!")
+var setKodeJWT = []byte(os.Getenv("JWTSECRET"))
 
 type ClaimsDataObat struct {
 	UserID   int    `json:"user_id"`
