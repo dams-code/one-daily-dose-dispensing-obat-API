@@ -20,6 +20,8 @@ func MigrasiDataObat(db *sql.DB) error {
 
 	typeDatabase := "postgres"
 
+	migrate.SetTable("gorp_migrations_one_daily_dose_obat")
+
 	n, err := migrate.Exec(db, typeDatabase, migrations, migrate.Up)
 
 	if err != nil {
