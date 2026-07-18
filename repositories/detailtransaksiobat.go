@@ -343,8 +343,7 @@ func UpdateDetailTransaksiObat(db *sql.DB, IdDetailTransaksiObat int, setDetailT
 	err = execUpdateDetailTransaksiObat.QueryRow(queryStokObatLama, IdDetailTransaksiObat).Scan(&transaksiID, &obatID, &jumlahLama, &status)
 
 	if err == sql.ErrNoRows {
-		return HasilUpdateDetailTransaksiObat,
-			fmt.Errorf("detail transaksi tidak ditemukan")
+		return HasilUpdateDetailTransaksiObat, fmt.Errorf("detail transaksi tidak ditemukan")
 	}
 
 	if err != nil {

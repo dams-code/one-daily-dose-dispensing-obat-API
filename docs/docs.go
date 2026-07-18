@@ -11,11 +11,12 @@ const docTemplate = `{
         "title": "{{.Title}}",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "Damar",
-            "email": "-"
+            "name": "Damar Djati Wahyu Kemala",
+            "url": "https://github.com/dams-code"
         },
         "license": {
-            "name": "MIT"
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
         },
         "version": "{{.Version}}"
     },
@@ -3251,7 +3252,7 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "localhost:8080",
 	BasePath:         "/api",
 	Schemes:          []string{},
-	Title:            "Final Project API",
+	Title:            "Final Project REST API Golang",
 	Description:      "Dokumentasi REST API Alur Obat Farmasi menggunakan Golang (Framework : Gin dan Database : PostgreSQL).",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,

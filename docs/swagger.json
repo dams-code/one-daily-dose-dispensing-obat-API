@@ -2,14 +2,15 @@
     "swagger": "2.0",
     "info": {
         "description": "Dokumentasi REST API Alur Obat Farmasi menggunakan Golang (Framework : Gin dan Database : PostgreSQL).",
-        "title": "Final Project API",
+        "title": "Final Project REST API Golang",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "Damar",
-            "email": "-"
+            "name": "Damar Djati Wahyu Kemala",
+            "url": "https://github.com/dams-code"
         },
         "license": {
-            "name": "MIT"
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
         },
         "version": "1.0"
     },

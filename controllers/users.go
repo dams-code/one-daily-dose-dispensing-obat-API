@@ -411,7 +411,7 @@ func RegisterUser(ctx *gin.Context) {
 					case "required":
 						pesan = "Role wajib diisi"
 					case "oneof":
-						pesan = "Role harus ADMINFARMASI atau APOTEKER"
+						pesan = "Role harus KEPALAFARMASI atau ADMINFARMASI atau APOTEKER"
 					}
 				}
 

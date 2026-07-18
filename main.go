@@ -1,12 +1,13 @@
-// @title           Final Project API
+// @title           Final Project REST API Golang
 // @version         1.0
 // @description     Dokumentasi REST API Alur Obat Farmasi menggunakan Golang (Framework : Gin dan Database : PostgreSQL).
 // @termsOfService  http://swagger.io/terms/
 
-// @contact.name    Damar
-// @contact.email   -
+// @contact.name    Damar Djati Wahyu Kemala
+// @contact.url     https://github.com/dams-code
 
 // @license.name    MIT
+// @license.url     https://opensource.org/licenses/MIT
 
 // @host            localhost:8080
 // @BasePath        /api
@@ -47,6 +48,7 @@ import (
 	"log"
 	"one-daily-dose-dispensing-obat-api/controllers"
 	router "one-daily-dose-dispensing-obat-api/routers"
+	"os"
 
 	_ "one-daily-dose-dispensing-obat-api/docs"
 )
@@ -63,7 +65,16 @@ func main() {
 
 	controllers.DBSqlConn = sqlCon
 
-	PORT := ":8080"
+	PORT := os.Getenv("PORT")
 
-	router.StartServer().Run(PORT)
+	if PORT == "" {
+		PORT = "8080"
+	}
+
+	err = router.StartServer().Run(":" + PORT)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
 }

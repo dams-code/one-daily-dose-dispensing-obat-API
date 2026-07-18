@@ -731,14 +731,15 @@ definitions:
 host: localhost:8080
 info:
   contact:
-    email: '-'
-    name: Damar
+    name: Damar Djati Wahyu Kemala
+    url: https://github.com/dams-code
   description: 'Dokumentasi REST API Alur Obat Farmasi menggunakan Golang (Framework
     : Gin dan Database : PostgreSQL).'
   license:
     name: MIT
+    url: https://opensource.org/licenses/MIT
   termsOfService: http://swagger.io/terms/
-  title: Final Project API
+  title: Final Project REST API Golang
   version: "1.0"
 paths:
   /api/admin-farmasi/kategori-obat:

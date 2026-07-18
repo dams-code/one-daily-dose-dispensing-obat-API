@@ -133,6 +133,21 @@ func TambahTransaksiObat(db *sql.DB, setTransaksiObat structs.TambahTransaksiOba
 }
 
 func UpdateTransaksiObat(db *sql.DB, IdTransaksiObat int, setTransaksiObat structs.UpdateTransaksiObatRequest, ModifiedBy string) (HasilUpdateTransaksiObat structs.TransaksiObat, err error) {
+
+	execUpdateTransaksiObat, err := db.Begin()
+
+	if err != nil {
+		return HasilUpdateTransaksiObat, err
+	}
+
+	defer func() {
+		if err != nil {
+			_ = execUpdateTransaksiObat.Rollback()
+		}
+	}()
+
+	queryCekDispensed := `SELECT status FROM transaksi_obat WHERE id = $1`
+
 	queryUpdate := `
 		UPDATE transaksi_obat
 		SET
@@ -144,12 +159,23 @@ func UpdateTransaksiObat(db *sql.DB, IdTransaksiObat int, setTransaksiObat struc
 					created_at, created_by, modified_at, modified_by
 	`
 
-	err = db.QueryRow(
-		queryUpdate,
-		setTransaksiObat.Status,
-		ModifiedBy,
-		IdTransaksiObat,
-	).Scan(
+	var status string
+
+	err = execUpdateTransaksiObat.QueryRow(queryCekDispensed, IdTransaksiObat).Scan(&status)
+
+	if err == sql.ErrNoRows {
+		return HasilUpdateTransaksiObat, fmt.Errorf("transaksi tidak ditemukan")
+	}
+
+	if err != nil {
+		return HasilUpdateTransaksiObat, err
+	}
+
+	if status == "DISPENSED" {
+		return HasilUpdateTransaksiObat, fmt.Errorf("transaksi sudah tidak dapat diubah, status transaksi obat : %s", status)
+	}
+
+	err = execUpdateTransaksiObat.QueryRow(queryUpdate, setTransaksiObat.Status, ModifiedBy, IdTransaksiObat).Scan(
 		&HasilUpdateTransaksiObat.ID, &HasilUpdateTransaksiObat.NoResep, &HasilUpdateTransaksiObat.PasienID, &HasilUpdateTransaksiObat.Status,
 		&HasilUpdateTransaksiObat.TipePembayaran, &HasilUpdateTransaksiObat.GrandTotal, &HasilUpdateTransaksiObat.TotalPembayaran, &HasilUpdateTransaksiObat.Kembalian, &HasilUpdateTransaksiObat.DibayarAt,
 		&HasilUpdateTransaksiObat.CreatedAt, &HasilUpdateTransaksiObat.CreatedBy,
@@ -167,13 +193,19 @@ func UpdateTransaksiObat(db *sql.DB, IdTransaksiObat int, setTransaksiObat struc
 		SELECT nama FROM pasien WHERE id = $1
 	`
 
-	err = db.QueryRow(queryPasien, HasilUpdateTransaksiObat.PasienID).
+	err = execUpdateTransaksiObat.QueryRow(queryPasien, HasilUpdateTransaksiObat.PasienID).
 		Scan(&HasilUpdateTransaksiObat.NamaPasien)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return structs.TransaksiObat{}, fmt.Errorf("Transaksi Obat ID %d tidak ditemukan", IdTransaksiObat)
 		}
+		return structs.TransaksiObat{}, err
+	}
+
+	err = execUpdateTransaksiObat.Commit()
+
+	if err != nil {
 		return structs.TransaksiObat{}, err
 	}
 
